@@ -13,8 +13,8 @@ development:
   encoding: utf8
   database: thuy_creative4_development
   pool: 5
-  username: root
-  password:
+  username: thuy_creative4
+  password: thuycreativeoct2013
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
