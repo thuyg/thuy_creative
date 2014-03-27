@@ -1,0 +1,54 @@
+<!-- This custom helper is defined in app/helpers/application_helper.rb -->
+<%= error_messages_for(@page) %>
+
+<table summary="Page form fields">
+	<tr>
+    	<th><%= f.label(:page_type_id, "Page type Name tag") %></th>
+    	<td><%= f.select(:page_type_id, @page_types.map {|pt| [pt.name_tag, pt.id]}) %></td>
+ 	</tr>
+	<tr>
+    	<th><%= f.label(:name_tag) %></th>
+    	<td><%= f.text_field(:name_tag) %></td>
+ 	</tr>
+ 	<tr>
+    	<th><%= f.label(:permalink) %></th>
+    	<td><%= f.text_field(:permalink) %></td>
+ 	</tr>
+	<tr>
+    	<th><%= f.label(:position) %></th>
+    	<td><%= f.select(:position, 1..@page_count) %></td>
+ 	</tr>
+	<tr>
+    	<th><%= f.label(:visible) %></th>
+    	<td><%= f.check_box(:visible) %></td>
+ 	</tr>
+	<tr>
+	    <th><%= f.label(:name) %></th>
+	    <td><%= f.text_field(:name) %></td>
+	 </tr>
+	<tr>
+	    <th><%= f.label(:title) %></th>
+	    <td><%= f.text_field(:title) %></td>
+	 </tr>
+	<tr>
+	    <th><%= f.label(:keyword) %></th>
+	    <td><%= f.text_field(:keyword) %></td>
+	 </tr>
+	<tr>
+	    <th><%= f.label(:description) %></th>
+	    <td><%= f.text_area(:description, :size => '40x5') %></td>
+	 </tr>
+	<tr>
+	    <th><%= f.label(:project_review_title) %></th>
+	    <td><%= f.text_field(:project_review_title) %></td>
+	 </tr>
+	<tr>
+	    <th><%= f.label(:project_review_short_description) %></th>
+	    <td><%= f.text_area(:project_review_short_description, :size => '40x5') %></td>
+	 </tr>
+	<tr>
+	    <th><%= f.label(:project_review_img) %></th>
+	    <td><%= f.text_field(:project_review_img) %></td>
+	 </tr>
+
+</table>

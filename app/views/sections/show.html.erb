@@ -1,0 +1,40 @@
+<% @page_title = "Show Section: #{@section.name_tag}" %>
+
+<%= link_to 'Edit', {:action => 'edit', :id => @section.id, :section_type_id => @section_type.id} %> |
+<%= link_to 'Back to List', {:action => 'index', :section_type_id => @section_type.id}, :class => 'back-link' %>
+
+<div class="sections show">
+  <h2>Show Section</h2>
+
+  <table summary="Section detail view">
+	<tr>
+      <th>Section type ID</th>
+      <td><%= @section.section_type_id %></td>
+    </tr>
+    <tr>
+      <th>Name tag</th>
+      <td><%= @section.name_tag %></td>
+    </tr>
+	<tr>
+      <th>Position</th>
+      <td><%= @section.position %></td>
+    </tr>
+	<tr>
+      <th>Visible</th>
+      <td><%= @section.visible %></td>
+    </tr>
+	<tr>
+      <th>Section content</th>
+      <td><%= @section.content %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @section.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @section.updated_at %></td>
+    </tr>
+  </table>
+  
+</div>

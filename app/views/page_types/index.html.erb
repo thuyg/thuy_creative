@@ -1,0 +1,31 @@
+<% @page_title = "Page Type List" %>
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
+
+<div class="page_types index">
+  <h2>Page Types</h2>
+  
+  <%= link_to(image_tag('plus_sign.png', :size => '11x11', :alt => '+') + "Add New Page Type", {:action => 'new'}, :class => 'action new') %>
+  <div><%= pluralize(@page_types.size, 'page type')%> found</div>
+
+  <table class="listing" summary="Page Types list">
+    <tr class="header">
+      <th>Page Type</th>
+       <th>Pages</th>
+      <th>Actions</th>
+    </tr>
+    <% @page_types.each do |page_type| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= page_type.name_tag %></td>
+      <td><%= page_type.pages.size %></td>
+      <td class="actions">
+      	<%= link_to("View Pages", {:controller => 'pages', :page_type_id => page_type.id}, :class => 'action show') %>
+      	<%= link_to('Show', {:action => 'show', :id => page_type.id}, :class => 'action show') %>			
+      	<%= link_to('Edit', {:action => 'edit', :id => page_type.id}, :class => 'action edit') %>
+        <%= link_to('Delete', {:action => 'delete', :id => page_type.id}, :class => 'action delete') %>
+      
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

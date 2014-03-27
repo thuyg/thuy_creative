@@ -1,0 +1,24 @@
+<% @page_title = "Show Page Type: #{@page_type.name_tag}" %>
+
+<%= link_to 'Edit', {:action => 'edit', :id => @page_type.id} %> |
+<%= link_to 'Back to List', {:action => 'index'}, :class => 'back-link' %>
+
+<div class="page_types show">
+  <h2>Show Page Type</h2>
+
+  <table summary="Page Type detail view">
+    <tr>
+      <th>Name tag</th>
+      <td><%= @page_type.name_tag %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @page_type.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @page_type.updated_at %></td>
+    </tr>
+  </table>
+  
+</div>

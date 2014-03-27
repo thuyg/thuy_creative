@@ -1,0 +1,17 @@
+<% @page_title = "Edit Page Type: #{@page_type.name_tag}" %>
+
+<%= link_to 'Back to List', {:action => 'index'} %>
+
+<div class="page-types edit">
+  <h2>Update Page Type</h2>
+
+  <%= form_for(:page_type, :url => {:action => 'update', :id => @page_type.id}) do |f| %>
+  
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Page Type") %>
+    </div>
+    
+  <% end %>
+</div>

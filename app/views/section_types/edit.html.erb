@@ -1,0 +1,17 @@
+<% @page_title = "Edit Section Type: #{@section_type.name_tag}" %>
+
+<%= link_to 'Back to List', {:action => 'index'} %>
+
+<div class="section-types edit">
+  <h2>Update Section Type</h2>
+
+  <%= form_for(:section_type, :url => {:action => 'update', :id => @section_type.id}) do |f| %>
+  
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Section Type") %>
+    </div>
+    
+  <% end %>
+</div>

@@ -1,0 +1,55 @@
+<% @page_title = "Page List" %>
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
+
+<%= link_to("<< Back to Page Types", {:controller => 'page_types', :action => 'index'}, :class => 'back-link') %>
+
+<div class="pages index">
+  <h2>Pages</h2>
+  
+  <%= link_to("Add New Page", {:action => 'new', :page_type_id => @page_type.id}, :class => 'action new') %>
+  <div><%= pluralize(@pages.size, 'page')%> found</div>
+
+  <table border="1" class="listing" summary="Pages list">
+    <tr class="header">
+		<th>Page type name tag</th>
+      	<th>Position</th>
+		<th>Page name tag</th>
+		<th>Visible</th>
+		<th>Permalink</th>
+		<th>Project review image</th>
+		<th>Page Name</th>
+		<th>Title</th>
+		<th>Keyword</th>
+		<th>Description</th>
+		<th>Project review title</th>
+		<th>Project review short description</th>
+      	<th>Actions</th>
+    </tr>
+    <% @pages.each do |page| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+		<td><%= page.page_type.name_tag if page.page_type %></td>
+      	<td><%= page.position %></td>
+		<td><%= page.name_tag %></td>
+		<td class="center"><%= status_tag(page.visible) %></td>
+		<td><%= page.permalink %></td>
+		<td><%= page.project_review_img %></td>
+		<td><%= page.name %></td>
+		<td><%= page.title %></td>
+		<td><%= page.keyword %></td>
+		<td><%= page.description %></td>
+		
+		<td><%= page.project_review_title %></td>
+		<td><%= page.project_review_short_description %></td>
+	
+      <td class="actions">
+      	<%= link_to("View Sections", '#', :class => 'action show') %>
+      	<%= link_to('Show', {:action => 'show', :id => page.id, :page_type_id => @page_type.id}, :class => 'action show') %>			
+      	<%= link_to('Edit', {:action => 'edit', :id => page.id, :page_type_id => @page_type.id}, :class => 'action edit') %>
+        <%= link_to('Delete', {:action => 'delete', :id => page.id, :page_type_id => @page_type.id}, :class => 'action delete') %>
+      
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

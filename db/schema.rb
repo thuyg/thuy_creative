@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310211151) do
+ActiveRecord::Schema.define(version: 20140325193902) do
 
   create_table "page_translations", force: true do |t|
-    t.integer  "page_id",                          null: false
-    t.string   "locale",                           null: false
+    t.integer  "page_id",                                     null: false
+    t.string   "locale",                                      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "title"
+    t.string   "title",                            limit: 65
     t.string   "keyword"
     t.text     "description"
     t.string   "project_review_title"
@@ -106,10 +106,10 @@ ActiveRecord::Schema.define(version: 20140310211151) do
     t.string   "last_name",       limit: 50
     t.string   "email",           limit: 100, default: "", null: false
     t.string   "username",        limit: 25
-    t.string   "hashed_password", limit: 40
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "salt",            limit: 40
+    t.string   "password_digest"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", using: :btree

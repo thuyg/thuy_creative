@@ -1,0 +1,31 @@
+<% @page_title = "Section Type List" %>
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
+
+<div class="section_types index">
+  <h2>Section Types</h2>
+  
+  <%= link_to("Add New Section Type", {:action => 'new'}, :class => 'action new') %>
+  <div><%= pluralize(@section_types.size, 'section type')%> found</div>
+
+  <table class="listing" summary="Section Types list">
+    <tr class="header">
+      <th>Section Type</th>
+       <th>Sections</th>
+      <th>Actions</th>
+    </tr>
+    <% @section_types.each do |section_type| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td class="center"><%= section_type.name_tag %></td>
+      <td class="center"><%= section_type.sections.size %></td>
+      <td class="actions">
+      	<%= link_to("View Sections", {:controller => 'sections', :section_type_id => section_type.id}, :class => 'action show') %>
+      	<%= link_to('Show', {:action => 'show', :id => section_type.id}, :class => 'action show') %>			
+      	<%= link_to('Edit', {:action => 'edit', :id => section_type.id}, :class => 'action edit') %>
+        <%= link_to('Delete', {:action => 'delete', :id => section_type.id}, :class => 'action delete') %>
+      
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

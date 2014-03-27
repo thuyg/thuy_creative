@@ -1,0 +1,68 @@
+<% @page_title = "Show Page: #{@page.name}" %>
+
+<%= link_to 'Edit', {:action => 'edit', :id => @page.id, :page_type_id => @page_type.id} %> |
+<%= link_to 'Back to List', {:action => 'index', :page_type_id => @page_type.id}, :class => 'back-link' %>
+
+<div class="pages show">
+  <h2>Show Page</h2>
+
+  <table summary="Page detail view">
+	<tr>
+      <th>Page type ID</th>
+      <td><%= @page.page_type_id %></td>
+    </tr>
+    <tr>
+      <th>Name tag</th>
+      <td><%= @page.name_tag %></td>
+    </tr>
+	<tr>
+      <th>Permalink</th>
+      <td><%= @page.permalink %></td>
+    </tr>
+	<tr>
+      <th>Position</th>
+      <td><%= @page.position %></td>
+    </tr>
+	<tr>
+      <th>Visible</th>
+      <td><%= @page.visible %></td>
+    </tr>
+	<tr>
+      <th>Page name</th>
+      <td><%= @page.name %></td>
+    </tr>
+	<tr>
+      <th>Page title</th>
+      <td><%= @page.title %></td>
+    </tr>
+	<tr>
+      <th>Page keyword</th>
+      <td><%= @page.keyword %></td>
+    </tr>
+	<tr>
+      <th>Page description</th>
+      <td><%= @page.description %></td>
+    </tr>
+	<tr>
+      <th>Project review image</th>
+      <td><%= @page.project_review_img %></td>
+    </tr>
+	<tr>
+      <th>Project review title</th>
+      <td><%= @page.project_review_title %></td>
+    </tr>
+	<tr>
+      <th>Project review short description</th>
+      <td><%= @page.project_review_short_description %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @page.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @page.updated_at %></td>
+    </tr>
+  </table>
+  
+</div>

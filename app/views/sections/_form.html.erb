@@ -1,0 +1,25 @@
+<!-- This custom helper is defined in app/helpers/application_helper.rb -->
+<%= error_messages_for(@section) %>
+
+<table summary="Section form fields">
+	<tr>
+    	<th><%= f.label(:section_type_id, "Section type name tag") %></th>
+    	<td><%= f.select(:section_type_id, @section_types.map {|st| [st.name_tag, st.id]}) %></td>
+ 	</tr>
+	<tr>
+    	<th><%= f.label(:name_tag) %></th>
+    	<td><%= f.text_field(:name_tag) %></td>
+ 	</tr>
+	<tr>
+    	<th><%= f.label(:position) %></th>
+    	<td><%= f.select(:position, 1..@section_count) %></td>
+ 	</tr>
+	<tr>
+    	<th><%= f.label(:visible) %></th>
+    	<td><%= f.check_box(:visible) %></td>
+ 	</tr>
+	<tr>
+	    <th><%= f.label(:content) %></th>
+	    <td><%= f.text_area(:content, :size => '40x5') %></td>
+	 </tr>
+</table>
