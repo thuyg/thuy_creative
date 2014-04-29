@@ -1,0 +1,28 @@
+<% @page_title = @page.name %>
+
+<h2><%= @page.name %></h2>
+
+<% @sections.each do |section| %>
+	<% if (section.name_tag != 'tag-line') and (section.name_tag != 'copyright') and (section.name_tag != 'about-us') %>
+  		<div class="section">
+    		<% case SectionType.section_type_name_tag(section.section_type_id).first.name_tag %>
+    			<% when 'html' %>
+      				<%= raw(sanitize(section.content, :tags => ['h2','h3','p','strong', 'em', 'a'])) %>
+    			<% when 'text' %>
+      				<p><%= section.content %></p>
+				<% when 'project-gallery' %>
+					<p>section type is project-gallery</p>
+					<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
+						<div class="project-b">
+							<a href="<%= page.permalink %>" title="<%= page.project_review_title %>">
+								<span><%= page.project_review_title %></span><br/>
+								<span><%= page.project_review_short_description %></span>
+							</a>
+						</div>
+					<% end %>
+				<% when 'link' %>
+					<p><%= link_to(section.content,section.content,{ :title => "Aeromark website"}) %></p>
+    		<% end %>
+  		</div>
+	<% end %>
+<% end %>

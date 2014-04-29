@@ -21,5 +21,16 @@
 	<tr>
 	    <th><%= f.label(:content) %></th>
 	    <td><%= f.text_area(:content, :size => '40x5') %></td>
-	 </tr>
+	</tr>
+	<tr>
+		<th>Pages</th>
+		<td>
+			<% @pages.each do |page| %>
+				<div>
+					<%= check_box_tag "section[page_ids][]", page.id, @section.pages.include?(page) %>
+					<%= page.name  %>
+				</div>
+			<% end %>
+		</td>
+	</tr>
 </table>

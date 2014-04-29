@@ -49,6 +49,17 @@
 	<tr>
 	    <th><%= f.label(:project_review_img) %></th>
 	    <td><%= f.text_field(:project_review_img) %></td>
-	 </tr>
+	</tr>
+	<tr>
+		<th>Sections</th>
+		<td>
+			<% @sections.each do |section| %>
+				<div>
+					<%= check_box_tag "page[section_ids][]", section.id, @page.sections.include?(section) %>
+					<%= section.name_tag %>
+				</div>
+			<% end %>
+		</td>
+	</tr>
 
 </table>

@@ -1,0 +1,8 @@
+<% pages ||= [] %>
+<ul>
+<% pages.each do |page| %>
+ 
+<li><%= link_to_unless_current(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
+  
+ <% end %>
+</ul>

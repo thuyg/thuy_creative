@@ -43,7 +43,6 @@
 		<td><%= page.project_review_short_description %></td>
 	
       <td class="actions">
-      	<%= link_to("View Sections", '#', :class => 'action show') %>
       	<%= link_to('Show', {:action => 'show', :id => page.id, :page_type_id => @page_type.id}, :class => 'action show') %>			
       	<%= link_to('Edit', {:action => 'edit', :id => page.id, :page_type_id => @page_type.id}, :class => 'action edit') %>
         <%= link_to('Delete', {:action => 'delete', :id => page.id, :page_type_id => @page_type.id}, :class => 'action delete') %>

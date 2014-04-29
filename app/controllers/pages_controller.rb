@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   
   before_action :confirm_logged_in
   before_action :find_page_type
+  before_action :find_sections
   
   def index
     #@pages = Page.where(:page_type_id => @page_type.id).sorted
@@ -18,6 +19,7 @@ class PagesController < ApplicationController
     @page = Page.new(:page_type_id => @page_type.id)
     @page_types = PageType.order('name_tag ASC')
     @page_count = Page.count + 1
+    @sections = Section.all
   end
   
   def create
@@ -41,6 +43,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @page_types = PageType.order('name_tag ASC') 
     @page_count = Page.count
+    @sections = Section.all
   end
   
   def update
@@ -75,12 +78,18 @@ class PagesController < ApplicationController
       # same as using "params[:page]", except that it:
       # - raises an error if :page is not present
       # - allows listed attributes to be mass-assigned
-      params.require(:page).permit(:page_type_id, :name_tag, :position, :visible, :permalink, :name, :title, :keyword, :description, :project_review_title, :project_review_short_description, :project_review_img)
+      params.require(:page).permit(:page_type_id, :name_tag, :position, :visible, :permalink, :name, :title, :keyword, :description, :project_review_title, :project_review_short_description, :project_review_img, {:section_ids => []})
     end
     
     def find_page_type
       if params[:page_type_id]
         @page_type = PageType.find(params[:page_type_id])
+      end
+    end
+    
+    def find_sections
+      if Section.all
+        @sections = Section.all
       end
     end
     

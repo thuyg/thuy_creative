@@ -4,6 +4,7 @@ class SectionsController < ApplicationController
   
   before_action :confirm_logged_in
   before_action :find_section_type
+  before_action :find_pages
   
   def index
     #@sections = Section.all
@@ -18,6 +19,7 @@ class SectionsController < ApplicationController
     @section = Section.new(:section_type_id => @section_type.id)
     @section_types = SectionType.order('name_tag ASC')
     @section_count = Section.count + 1
+    @pages = Page.all
   end
   
   def create
@@ -36,6 +38,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     @section_types = SectionType.order('name_tag ASC')
     @section_count = Section.count
+    @pages = Page.all
   end
   
   def update
@@ -66,13 +69,19 @@ class SectionsController < ApplicationController
       # same as using "params[:section]", except that it:
       # - raises an error if :section is not present
       # - allows listed attributes to be mass-assigned
-      params.require(:section).permit(:section_type_id, :name_tag, :position, :visible, :content)
+      params.require(:section).permit(:section_type_id, :name_tag, :position, :visible, :content, {:page_ids => []})
     end
     
     def find_section_type
        if params[:section_type_id]
         @section_type = SectionType.find(params[:section_type_id]) 
        end
+   end
+   
+   def find_pages
+     if Page.all
+       @pages = Page.all
+     end
    end
    
 end

@@ -46,3 +46,6 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Globalize builds on the I18n API in Ruby on Rails to add model translations to ActiveRecord models.
 gem 'globalize', '~> 4.0.0'
+
+# provides the capabilities for sorting and reordering a number of objects in a list
+gem 'acts_as_list', '~> 0.4.0'
