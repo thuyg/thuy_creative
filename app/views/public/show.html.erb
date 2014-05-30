@@ -1,28 +1,64 @@
 <% @page_title = @page.name %>
 
-<h2><%= @page.name %></h2>
+<section role="main" id="content">
+	<div class="main-content-style">
+		
+		<h1><%= @page.name %></h1>
 
-<% @sections.each do |section| %>
-	<% if (section.name_tag != 'tag-line') and (section.name_tag != 'copyright') and (section.name_tag != 'about-us') %>
-  		<div class="section">
-    		<% case SectionType.section_type_name_tag(section.section_type_id).first.name_tag %>
-    			<% when 'html' %>
-      				<%= raw(sanitize(section.content, :tags => ['h2','h3','p','strong', 'em', 'a'])) %>
-    			<% when 'text' %>
-      				<p><%= section.content %></p>
-				<% when 'project-gallery' %>
-					<p>section type is project-gallery</p>
-					<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
-						<div class="project-b">
-							<a href="<%= page.permalink %>" title="<%= page.project_review_title %>">
-								<span><%= page.project_review_title %></span><br/>
-								<span><%= page.project_review_short_description %></span>
-							</a>
-						</div>
-					<% end %>
-				<% when 'link' %>
-					<p><%= link_to(section.content,section.content,{ :title => "Aeromark website"}) %></p>
-    		<% end %>
-  		</div>
-	<% end %>
+		<% if (@page.name_tag == 'service') %>
+			<div class="service">
+		<% end %><!-- /end of if page is service -->
+
+		<% @sections.each do |section| %>
+			<% if (section.name_tag != 'tag-line') and (section.name_tag != 'copyright') and (section.name_tag != 'about-us') %>
+  		
+    			<% case SectionType.section_type_name_tag(section.section_type_id).first.name_tag %>
+    				<% when 'html' %>
+      					<%= raw(sanitize(section.content, :tags => ['h1', 'h2', 'h3', 'p', 'span', 'strong', 'em', 'a', 'img', 'abbr', 'b', 'div', 'section'])) %>
+    				<% when 'text' %>
+      					<p><%= section.content %></p>
+					<% when 'link' %>
+						<p><%= link_to(section.content,section.content,{ :title => ""}) %></p>
+							
+					<% when 'project-gallery' %>
+						<% if (@page.name_tag != 'portfolio') %>
+								</div><!-- /main-content-style -->	
+							</section>
+							<aside class="more-project" role="complementary">
+								<div class="more-project-style">
+									<h1>More from my portfolio</h1>
+						<% end %><!-- /end of if page is service -->
+						
+						
+						<ul class="thumbnail clearfix">
+						<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
+							<% if (@page.id != page.id) %>
+								<li>
+									<a href="<%= page.permalink %>" title="<%= page.project_review_title %>"  class="project-preview">
+										<%= image_tag(page.project_review_img) %>
+										<span class="preview-project-heading"><%= page.project_review_title %></span>
+										<span class="preview-project-short-description"><%= page.project_review_short_description %></span>
+									</a>
+								</li>
+							<% end %>
+						<% end %>
+						</ul>
+						
+						<% if (@page.name_tag != 'portfolio') %>
+								</div><!-- /more-project-style -->
+							</aside>
+						<% end %><!-- /end of if page is service -->
+					
+    			<% end %><!-- end case of section type -->
+  		
+			<% end %><!-- end if of not section of tag-line, etc. -->
+		<% end %><!-- end case of sections--> 
+
+		<% if (@page.name_tag == 'service') %>
+			</div>
+		<% end %><!-- /end of if page is service -->
+		
+<% if (@page.page_type_id != PageType.project.first.id) %> 
+		</div><!-- /main-content-style -->	
+	</section>
 <% end %>

@@ -5,37 +5,37 @@
     <%= stylesheet_link_tag('application', :media => 'all') %>
   </head>
   <body>
-    <div id="header">
-      <h1>
-		<%= image_tag('thuy-creative-logo.png', :size => '113x126', :alt => 'Thuy Creative logo') %>
-		THUY CREATIVE
-	  </h1>
-	  <h2><%= Section.tag_line_section.first.content %></h2>
-    </div><!-- /header -->
+    <header id="page-header" role="banner">
+		<div class="header-style">
+      		<h1><a href="#" title="Thuy Creative">Thuy Creative</a></h1>
+	  		<h2 class="tag-line"><%= Section.tag_line_section.first.content %></h2>
+		</div><!-- /header-style -->
+    </header>
 
-    <div id="main">
-      <div id="navigation">
-        <%= render(:partial => 'layouts/navigation', :locals => {:pages => @pages}) %>
-      </div><!-- /navigation -->
+    <nav id="main-nav" role="navigation">
+		<div class="main-nav-style">
+			<h1 class="assistive-text">Site navigation</h1>
+        	<%= render(:partial => 'layouts/navigation', :locals => {:pages => @pages}) %>
+     	</div><!-- /main-nav-style -->
+	</nav>
 
-      <div id="content">
-        <%= yield %>
-      </div><!-- /content -->
+     
+        	<%= yield %>
+      	
 
-      <div class="clear"></div>
-
-    </div><!-- /main-->
-
-    <div id="footer">
-		<div class="copyright-b">
-      <p id="copyright">Thuy Creative</p>
-	  <p>&copy; <%= Section.copyright_section.first.content %> <%= Date.today.year %></p>
-		</div>
+    <footer id="page-footer">
+		<div class="footer-style">
+			
+			<aside class="about-us">
+				<%= raw(sanitize(Section.about_us_section.first.content, :tags => ['h1', 'h2', 'h3', 'p', 'strong', 'em', 'a'])) %>
+			</aside><!-- /about-us -->
+	
+		<div class="copyright">
+	  		<p>&copy; <%= Date.today.year %> Thuy Creative</p>
+		</div><!-- /copyright -->
 		
-		<div class="about-us-b">
-			<%= raw(sanitize(Section.about_us_section.first.content, :tags => ['h2','h3','p','strong', 'em', 'a'])) %>
-		</div>
-    </div><!-- /footer -->
+    	</div><!-- /footer-style -->
+	</footer>
 
   </body>
 </html>

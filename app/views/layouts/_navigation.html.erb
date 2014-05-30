@@ -1,8 +1,9 @@
 <% pages ||= [] %>
 <ul>
 <% pages.each do |page| %>
- 
-<li><%= link_to_unless_current(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
-  
- <% end %>
+<% if (page.page_type_id != PageType.project.first.id) %> 
+	<li><%= link_to_unless_current(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
+<% end %> 
+
+<% end %>
 </ul>
