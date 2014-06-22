@@ -19,13 +19,13 @@ gem 'mysql2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-#gem 'jquery-rails'
+gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-#gem 'jbuilder', '~> 1.2'
+# gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -49,3 +49,16 @@ gem 'globalize', '~> 4.0.0'
 
 # provides the capabilities for sorting and reordering a number of objects in a list
 gem 'acts_as_list', '~> 0.4.0'
+
+# The tinymce-rails gem integrates the TinyMCE editor with the Rails asset pipeline.
+gem 'tinymce-rails'
+
+# Image upload plugin for TinyMCE and Rails with the asset pipeline
+# gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+# gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+
+# Easy file attachment management for ActiveRecord
+# gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+# RMagick is a binding from Ruby to the ImageMagick image manipulation library.
+# gem 'rmagick', :git=>'http://github.com/rmagick/rmagick.git'

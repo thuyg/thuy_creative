@@ -26,4 +26,12 @@ ThuyCreative4::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  
+  # Set to :debug to see everything in the log.
+  config.log_level = :debug
+  
+  # let Paperclip know to look where ImageMagick is
+  # Paperclip.options[:command_path] = "/usr/local/bin/"
+  
+  
 end

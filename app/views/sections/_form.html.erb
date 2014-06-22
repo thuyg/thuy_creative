@@ -20,7 +20,9 @@
  	</tr>
 	<tr>
 	    <th><%= f.label(:content) %></th>
-	    <td><%= f.text_area(:content, :size => '40x5') %></td>
+	    <td>
+			<%= f.text_area(:content, :class => "tinymce", :size => '60x20') %>
+		</td>
 	</tr>
 	<tr>
 		<th>Pages</th>
@@ -34,3 +36,5 @@
 		</td>
 	</tr>
 </table>
+
+<%= tinymce %>

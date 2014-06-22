@@ -1,0 +1,8 @@
+toolbar:
+  - styleselect | bold italic | link image | undo redo
+  - table | fullscreen | uploadimage
+plugins:
+  - table
+  - fullscreen
+  - code
+  - uploadimage

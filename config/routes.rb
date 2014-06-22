@@ -4,6 +4,9 @@ ThuyCreative4::Application.routes.draw do
   get 'show/:permalink', :to => 'public#show'
   
   get 'admin', :to => 'access#index'
+  
+  # post '/tinymce_assets' => 'tinymce_assets#create'
+  
   match ':controller(/:action(/:id))', :via => [:get, :post]
   
   # The priority is based upon order of creation: first created -> highest priority.
