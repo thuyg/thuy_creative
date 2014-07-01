@@ -21,33 +21,47 @@
 						<p><%= link_to(section.content,section.content,{ :title => ""}) %></p>
 							
 					<% when 'project-gallery' %>
+					
 						<% if (@page.name_tag != 'portfolio') %>
 								</div><!-- /main-content-style -->	
 							</section>
 							<aside class="more-project" role="complementary">
 								<div class="more-project-style">
 									<h1>More from my portfolio</h1>
-						<% end %><!-- /end of if page is service -->
-						
-						
-						<ul class="thumbnail clearfix">
-						<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
-							<% if (@page.id != page.id) %>
-								<li>
-									<a href="<%= page.permalink %>" title="<%= page.project_review_title %>"  class="project-preview">
-										<%= image_tag(page.project_review_img) %>
-										<span class="preview-project-heading"><%= page.project_review_title %></span>
-										<span class="preview-project-short-description"><%= page.project_review_short_description %></span>
-									</a>
-								</li>
-							<% end %>
-						<% end %>
-						</ul>
-						
-						<% if (@page.name_tag != 'portfolio') %>
+									<ul class="thumbnail clearfix">
+									<% counter = 1 %>
+									<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
+										<% if (@page.id != page.id) %>
+											<% if (counter <= 3) %>
+											<li>
+												<a href="<%= page.permalink %>" title="<%= page.project_review_title %>"  class="project-preview">
+													<%= image_tag(page.project_review_img, :size => '312x173') %>
+													<span class="preview-project-heading"><%= page.project_review_title %></span>
+													<span class="preview-project-short-description"><%= page.project_review_short_description %></span>
+												</a>
+											</li>
+											<% end %>
+											<% counter = counter + 1 %>
+										<% end %>
+									<% end %>
+									</ul>
 								</div><!-- /more-project-style -->
-							</aside>
-						<% end %><!-- /end of if page is service -->
+							</aside>	
+						<% end %><!-- /end of if page is not portfolio -->
+						
+						<% if (@page.name_tag == 'portfolio') %>
+							<ul class="thumbnail clearfix">
+								<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
+									<li>
+										<a href="<%= page.permalink %>" title="<%= page.project_review_title %>"  class="project-preview">
+											<%= image_tag(page.project_review_img, :size => '312x173') %>
+											<span class="preview-project-heading"><%= page.project_review_title %></span>
+											<span class="preview-project-short-description"><%= page.project_review_short_description %></span>
+										</a>
+									</li>
+								<% end %>
+							</ul>
+						<% end %><!-- /page is portfolio -->
 					
     			<% end %><!-- end case of section type -->
   		

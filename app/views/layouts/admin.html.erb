@@ -8,6 +8,8 @@
 	<%= stylesheet_link_tag('application', :media => 'all') %>
 	<%= javascript_include_tag("application") %>
 	
+	<%= csrf_meta_tags %>
+	
   </head>
   <body>
 	
@@ -36,5 +38,8 @@
       <p id="copyright">&copy; Thuy Creative</p>
     </div><!-- /footer -->
 
+	<!-- WYSIWYG editor with image button - list of all the uploaded images -->
+	<%= tinymce :image_list => buckets_path(:format => :json) %>
+	
   </body>
 </html>

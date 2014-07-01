@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -52,6 +52,9 @@ gem 'acts_as_list', '~> 0.4.0'
 
 # The tinymce-rails gem integrates the TinyMCE editor with the Rails asset pipeline.
 gem 'tinymce-rails'
+
+# file uploads
+gem 'carrierwave'
 
 # Image upload plugin for TinyMCE and Rails with the asset pipeline
 # gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
