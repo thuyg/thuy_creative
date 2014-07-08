@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>THUY CREATIVE<%= " | #{@page_title}" if @page_title %></title>
+    <title><%= "#{@page_title} | " if @page_title %>THUY CREATIVE</title>
     <%= stylesheet_link_tag('application', :media => 'all') %>
   </head>
   <body>

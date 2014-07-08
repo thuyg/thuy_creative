@@ -14,7 +14,8 @@ ThuyCreative4::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  #config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -33,5 +34,17 @@ ThuyCreative4::Application.configure do
   # let Paperclip know to look where ImageMagick is
   # Paperclip.options[:command_path] = "/usr/local/bin/"
   
+  
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "thuycreative.net",
+    :user_name            => "gthuyduong",
+    :password             => "testpassword1july2014",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+
+  # ActionMailer::Base.default_url_options[:host] = "localhost:3000"
   
 end

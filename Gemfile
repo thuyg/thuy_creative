@@ -56,6 +56,9 @@ gem 'tinymce-rails'
 # file uploads
 gem 'carrierwave'
 
+# to avoid spam
+gem "recaptcha", require: "recaptcha/rails"
+
 # Image upload plugin for TinyMCE and Rails with the asset pipeline
 # gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 # gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'

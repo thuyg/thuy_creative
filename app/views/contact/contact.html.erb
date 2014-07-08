@@ -1,0 +1,13 @@
+<h1>Get in touch!</h1>
+<p>Send us your message through the following form</p>
+
+<%= form_tag dispatch_email_path, method: :post do %>
+  <%= label_tag "user_info[name]", "Name" %>
+  <%= text_field_tag "user_info[name]" %>
+  <%= label_tag "user_info[email]", "Email" %>
+  <%= text_field_tag "user_info[email]" %>
+  <%= label_tag "user_info[message_body]", "Message" %>
+  <%= text_area_tag "user_info[message_body]", "" %>
+  
+  <%= submit_tag "Send" %>
+<% end %>
