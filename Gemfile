@@ -56,6 +56,9 @@ gem 'tinymce-rails'
 # file uploads
 gem 'carrierwave'
 
+# Send e-mail straight from forms in Rails with I18n, validations, attachments and request information.
+# gem 'mail_form'
+
 # to avoid spam
 gem "recaptcha", require: "recaptcha/rails"
 

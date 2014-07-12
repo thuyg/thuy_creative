@@ -5,13 +5,14 @@
 <div class="page_types index">
   <h2>Page Types</h2>
   
-  <%= link_to(image_tag('plus_sign.png', :size => '11x11', :alt => '+') + "Add New Page Type", {:action => 'new'}, :class => 'action new') %>
-  <div><%= pluralize(@page_types.size, 'page type')%> found</div>
+  <%= link_to(image_tag('plus_sign.png', :size => '11x11', :alt => '+') + " Add New Page Type", {:action => 'new'}, :class => 'action new') %>
+
+  <div class="num-found"><%= pluralize(@page_types.size, 'page type')%> found</div>
 
   <table class="listing" summary="Page Types list">
     <tr class="header">
       <th>Page Type</th>
-       <th>Pages</th>
+       <th>Number of Pages</th>
       <th>Actions</th>
     </tr>
     <% @page_types.each do |page_type| %>

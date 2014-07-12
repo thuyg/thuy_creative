@@ -1,7 +1,7 @@
 <!-- This custom helper is defined in app/helpers/application_helper.rb -->
 <%= error_messages_for(@page_type) %>
 
-<table summary="Page Type form fields">
+<table summary="Page Type form fields" class="admin-form" cellspacing="0" cellpadding="0">
   <tr>
     <th><%= f.label(:name_tag) %></th>
     <td><%= f.text_field(:name_tag) %></td>

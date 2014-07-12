@@ -6,7 +6,7 @@
   <h2>Section Types</h2>
   
   <%= link_to("Add New Section Type", {:action => 'new'}, :class => 'action new') %>
-  <div><%= pluralize(@section_types.size, 'section type')%> found</div>
+  <div class="num-found"><%= pluralize(@section_types.size, 'section type')%> found</div>
 
   <table class="listing" summary="Section Types list">
     <tr class="header">

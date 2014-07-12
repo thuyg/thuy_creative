@@ -6,7 +6,8 @@
   <h2>Users</h2>
   
   <%= link_to("Add New User", {:action => 'new'}, :class => 'action new') %>
-  <div><%= pluralize(@users.size, 'user')%> found</div>
+
+  <div class="num-found"><%= pluralize(@users.size, 'user')%> found</div>
 
   <table class="listing" summary="users list">
     <tr class="header">

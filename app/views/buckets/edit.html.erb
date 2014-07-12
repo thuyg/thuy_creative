@@ -1,6 +1,13 @@
-<h1>Editing bucket</h1>
+<% @page_title = "Edit bucket" %>
+
+<%= link_to 'Show', @bucket %> | <%= link_to 'Back to List', buckets_path %>
+
+<div class="page-types edit">
+  <h2>Editing bucket</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @bucket %> |
-<%= link_to 'Back', buckets_path %>
+
+
+
+</div>

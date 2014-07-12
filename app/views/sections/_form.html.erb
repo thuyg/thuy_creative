@@ -1,7 +1,7 @@
 <!-- This custom helper is defined in app/helpers/application_helper.rb -->
 <%= error_messages_for(@section) %>
 
-<table summary="Section form fields">
+<table summary="Section form fields" class="admin-form">
 	<tr>
     	<th><%= f.label(:section_type_id, "Section type name tag") %></th>
     	<td><%= f.select(:section_type_id, @section_types.map {|st| [st.name_tag, st.id]}) %></td>

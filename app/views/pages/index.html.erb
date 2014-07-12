@@ -8,7 +8,8 @@
   <h2>Pages</h2>
   
   <%= link_to("Add New Page", {:action => 'new', :page_type_id => @page_type.id}, :class => 'action new') %>
-  <div><%= pluralize(@pages.size, 'page')%> found</div>
+
+  <div class="num-found"><%= pluralize(@pages.size, 'page')%> found</div>
 
   <table border="1" class="listing" summary="Pages list">
     <tr class="header">

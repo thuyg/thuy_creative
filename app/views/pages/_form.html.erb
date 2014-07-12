@@ -1,7 +1,7 @@
 <!-- This custom helper is defined in app/helpers/application_helper.rb -->
 <%= error_messages_for(@page) %>
 
-<table summary="Page form fields">
+<table summary="Page form fields" class="admin-form">
 	<tr>
     	<th><%= f.label(:page_type_id, "Page type Name tag") %></th>
     	<td><%= f.select(:page_type_id, @page_types.map {|pt| [pt.name_tag, pt.id]}) %></td>

@@ -20,7 +20,7 @@
 		</div><!-- /header-style -->
     </header>
 
-    <div id="main">
+    <section id="main-admin">
 	
       <% if !flash[:notice].blank? %>
       	<div class="notice">
@@ -28,15 +28,15 @@
       	</div>
       <% end %>
 
-      <div id="content">
+      <div id="content-admin">
         <%= yield %>
       </div><!-- /content -->
 
-    </div><!-- /main -->
+    </section><!-- /main -->
 
-    <div id="footer">
-      <p id="copyright">&copy; Thuy Creative</p>
-    </div><!-- /footer -->
+    <footer id="footer-admin">
+      <p class="copyright-admin">&copy; Thuy Creative</p>
+    </footer><!-- /footer-admin -->
 
 	<!-- WYSIWYG editor with image button - list of all the uploaded images -->
 	<%= tinymce :image_list => buckets_path(:format => :json) %>

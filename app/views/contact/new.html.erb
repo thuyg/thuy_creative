@@ -1,0 +1,33 @@
+<section role="main" id="content">
+	<div class="main-content-style">
+
+<h1>Get in touch!</h1>
+<p>Send us your message through the following form</p>
+
+<!-- This custom helper is defined in app/helpers/application_helper.rb -->
+<%= error_messages_for(@contact) %>
+
+<div class="contact-form-block">
+	<%= form_for(:contact, :url => {:action => 'create'}) do |f| %>
+	
+		<div class="float-left column-1">
+			
+			<p><%= f.label(:name) %><br />
+		    <%= f.text_field(:name) %></p>
+		
+			<p><%= f.label(:email) %><br />
+		    <%= f.text_field(:email) %></p>
+			
+		</div><!-- /float-left -->
+		
+		<div class="float-left">
+			<p><%= f.label(:message) %><br />
+		    <%= f.text_area(:message_body, rows: 7) %></p>
+
+			<%= f.submit "Send" %>
+		</div><!-- /float-left -->
+  
+	<% end %>
+</div><!-- /contact-form-block -->
+</div><!-- /main-content-style -->	
+</section>

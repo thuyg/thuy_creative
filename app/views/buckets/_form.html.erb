@@ -12,14 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
+    <p><%= f.label :name %><br>
+    <%= f.text_field :name %></p>
 
-	<%= f.label :attachment %><br>
-	<%= f.file_field :attachment %>
-	
+	<p><%= f.label :attachment %><br>
+	<%= f.file_field :attachment %></p>	
   </div>
-  <div class="actions">
+
+  <div class="form-buttons">
     <%= f.submit %>
   </div>
+
 <% end %>

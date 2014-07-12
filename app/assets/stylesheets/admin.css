@@ -1,8 +1,104 @@
 /* Admin stylesheet       */
 /* load after public.css */
 
+#main-admin {
+	background-color: #E6E6E6;
+	margin-top: 24px;
+	padding: 24px;	
+}
+
+#main-admin h2 {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+#main-admin p {
+	font-size: 14px;
+}
+
+#main-admin a {
+	color: #666;
+	text-decoration: none;
+}
+
+#main-admin a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.menu-admin li {
+	line-height: 1.71428571428571;
+	margin-left: 24px;
+}
+
+.identity,
+.notice {
+	margin-bottom: 10px;
+}
+.notice {
+	font-style: italic;
+}
+
+.num-found {
+	margin-bottom: 24px;
+}
+.buckets,
+.num-found {
+	margin-top: 24px;
+}
+
+/* table */
+.listing {
+	width: 100%;
+	border-collapse: collapse;
+}
 .listing tr,
 .listing td,
 .listing th {
 	border: solid 1px #cccccc;
+	padding: 5px;
+}
+.listing th {
+	font-weight: bold;
+}
+.show-tbl th {
+	text-align: left;
+}
+
+/* admin form table */
+.admin-form th {
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+.admin-form td {
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+/* form */
+.form-buttons {
+	margin-top: 10px;
+}
+
+/* link button */
+.action {
+	padding: 5px;
+	line-height: 2;
+	background: #f0f0f0;
+	border: solid 1px #666;
+}
+#main-admin a.action:hover {
+	background: #fff;
+	border-color: #333;
+	text-decoration: none;
+}
+
+/* Footer */
+.copyright-admin {
+	margin-top: 24px;
+	text-align: center;
 }

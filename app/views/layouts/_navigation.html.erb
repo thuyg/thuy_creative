@@ -2,10 +2,12 @@
 <ul>
 <% pages.each do |page| %>
 	<% if (page.page_type_id != PageType.project.first.id) %> 
-		<li><%= link_to_unless_current(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
+		<li><%= link_to_unless_current(page.name, {:controller => 'public', :action => 'show', :permalink => page.permalink}) %></li>
 		<% end %> 
 <% end %>
 
-	<li><%= link_to_unless_current('Contact', {:controller => 'public', :action => 'contact'}) %></li>
+	<!-- <li><%= link_to_unless_current('Contact', {:controller => 'public', :action => 'contact'}) %></li> -->
+	
+	<li><%= link_to_unless_current('Contact', {:controller => 'contact', :action => 'new'}) %></li>
 
 </ul>

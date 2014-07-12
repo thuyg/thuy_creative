@@ -8,7 +8,8 @@
   <h2>Sections</h2>
   
   <%= link_to("Add New Section", {:action => 'new', :section_type_id => @section_type.id}, :class => 'action new') %>
-  <div><%= pluralize(@sections.size, 'section')%> found</div>
+
+  <div class="num-found"><%= pluralize(@sections.size, 'section')%> found</div>
 
   <table border="1" class="listing" summary="Sections list">
     <tr class="header">

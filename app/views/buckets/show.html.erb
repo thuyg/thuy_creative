@@ -1,9 +1,16 @@
+<% @page_title = "Show bucket" %>
+
 <p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_bucket_path(@bucket) %> |
+<%= link_to 'Back', buckets_path %>
+
+<div class="buckets show">
+  <h2>Show Bucket</h2>
 
 <p>
   <strong>Name:</strong>
   <%= @bucket.name %>
 </p>
 
-<%= link_to 'Edit', edit_bucket_path(@bucket) %> |
-<%= link_to 'Back', buckets_path %>
+</div>

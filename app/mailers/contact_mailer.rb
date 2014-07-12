@@ -6,8 +6,13 @@ class ContactMailer < ActionMailer::Base
   
   headers = {'Return-Path' => 'gthuyduong@yahoo.com'}
   
-  def send_email(user_info)
-      @user_info = user_info
+  #def send_email(user_info)
+  #   @user_info = user_info
+  
+  def send_email(name, email, body)
+      @name = name
+      @email = email
+      @body = body
 
       mail(
         to: "gthuyduong@googlemail.com",

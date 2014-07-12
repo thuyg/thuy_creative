@@ -1,9 +1,9 @@
 ThuyCreative4::Application.routes.draw do
 
-  #match "contact", to: "contact#contact", via: 'get'
+  match "contact", to: "contact#new", via: 'get'
   #match "dispatch_email", to: "contact#dispatch_email", via: 'post'
-  match "contact", to: "public#contact", via: 'get'
-  match "dispatch_email", to: "public#dispatch_email", via: 'post'
+  #match "contact", to: "public#contact", via: 'get'
+  #match "dispatch_email", to: "public#dispatch_email", via: 'post'
   
   #match "contact", to: "contact#contact", as: "contact"
   #match "dispatch_email", to: "contact#dispatch_email",
