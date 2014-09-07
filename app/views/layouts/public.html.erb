@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<meta charset="utf-8" />
+	
     <title><%= "#{@page_title} | " if @page_title %>Thuy Creative</title>
-    <%= stylesheet_link_tag('application', :media => 'all') %>
+   
+	<%= stylesheet_link_tag('public', :media => 'all') %>
+	
+	<!-- This conditional comment works for IE 10+ and other browsers  -->
+	<!--[if !IE]><!--> <%= stylesheet_link_tag('animations-style', :media => 'all') %> <!--<![endif]-->
+	
+	
   </head>
   <body>
     <header id="page-header" role="banner">
 		<div class="header-style">
-      		<h1><a href="#" title="Thuy Creative">Thuy Creative</a></h1>
-	  		<h2 class="tag-line"><%= Section.tag_line_section.first.content %></h2>
+      		<h1><a href="/" title="Thuy Creative">Thuy Creative</a></h1>
+	  		<!-- <h2 class="tag-line"><%= strip_tags(Section.tag_line_section.first.content) %></h2> -->
+			<h2 class="tag-line"><%= raw(sanitize(Section.tag_line_section.first.content, :tags => ['&eacute;', '&ecirc;', '&agrave;'])) %></h2>
 		</div><!-- /header-style -->
     </header>
 
@@ -32,6 +41,24 @@
 	
 		<div class="copyright">
 	  		<p>&copy; <%= Date.today.year %> Thuy Creative</p>
+			
+			<nav class="footer-nav" role="navigation">
+				<h1 class="assistive-text">Site navigation at the footer</h1>
+				<%= render(:partial => 'layouts/navigation', :locals => {:pages => @pages}) %>
+			</nav>
+			
+			<ul class="languages">
+			<% I18n.available_locales.each do |locale| %>
+				<li>
+			    	<% if I18n.locale == locale.to_sym %>
+			      		<b><%= link_to locale.to_s.capitalize, url_for(:locale => locale) %></b>
+			    	<% else %>
+			      		<%= link_to locale.to_s.capitalize, url_for(:locale => locale) %>
+			    	<% end %>
+				</li>
+			  <% end %>
+			</ul>
+			
 		</div><!-- /copyright -->
 		
     	</div><!-- /footer-style -->

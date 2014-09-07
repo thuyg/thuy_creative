@@ -19,5 +19,17 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en:  
+    morefromportfolio: "More from my portfolio"
+    contactmenuitem: "Contact"
+    contacttext:
+        title: "Get in touch!"
+        paragraph: "Send us your message through the following form"
+    contactform:
+        labels:
+            name: "Name"
+            email: "Email"
+            message: "Message"
+        submit:
+            send: "Send"
+      

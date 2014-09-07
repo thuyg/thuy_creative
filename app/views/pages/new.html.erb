@@ -1,11 +1,11 @@
 <% @page_title = "Create Page" %>
 
-<%= link_to '<< Back to List', {:action => 'index', :page_type_id => @page_type.id} %>
+<%= link_to '<< Back to List', page_type_pages_path(:page_type_id => @page_type.id) %>
 
 <div class="pages new">
   <h2>Create Page</h2>
 
-  <%= form_for(:page, :url => {:action => 'create', :page_type_id => @page_type.id}) do |f| %>
+  <%= form_for(:page, :url => page_type_pages_path(:page_type_id => @page_type.id), :html => {:method => :post}) do |f| %>
   
 	<%= render(:partial => "form", :locals => {:f => f}) %>
     

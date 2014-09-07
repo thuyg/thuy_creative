@@ -5,7 +5,8 @@
 <div class="section_types index">
   <h2>Section Types</h2>
   
-  <%= link_to("Add New Section Type", {:action => 'new'}, :class => 'action new') %>
+  <%= link_to("Add New Section Type", new_section_type_path(), :class => 'action new') %>
+
   <div class="num-found"><%= pluralize(@section_types.size, 'section type')%> found</div>
 
   <table class="listing" summary="Section Types list">
@@ -19,10 +20,10 @@
       <td class="center"><%= section_type.name_tag %></td>
       <td class="center"><%= section_type.sections.size %></td>
       <td class="actions">
-      	<%= link_to("View Sections", {:controller => 'sections', :section_type_id => section_type.id}, :class => 'action show') %>
-      	<%= link_to('Show', {:action => 'show', :id => section_type.id}, :class => 'action show') %>			
-      	<%= link_to('Edit', {:action => 'edit', :id => section_type.id}, :class => 'action edit') %>
-        <%= link_to('Delete', {:action => 'delete', :id => section_type.id}, :class => 'action delete') %>
+      	<%= link_to("View Sections", section_type_sections_path(:section_type_id => section_type.id), :class => 'action show') %>
+      	<%= link_to('Show', section_type_path(:id => section_type.id), :class => 'action show') %>			
+      	<%= link_to('Edit', edit_section_type_path(:id => section_type.id), :class => 'action edit') %>
+        <%= link_to('Delete', delete_section_type_path(:id => section_type.id), :class => 'action delete') %>
       
       </td>
     </tr>

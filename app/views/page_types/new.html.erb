@@ -1,12 +1,11 @@
 <% @page_title = "Create Page Type" %>
 
-<%= link_to '<< Back to List', {:action => 'index'} %>
+<%= link_to '<< Back to List', page_types_path %>
 
 <div class="page-types new">
   <h2>Create Page Type</h2>
-
-  <%= form_for(:page_type, :url => {:action => 'create'}) do |f| %>
-  
+	<%= form_for(@page_type) do |f| %>
+	  
     <%= render(:partial => "form", :locals => {:f => f}) %>
     
     <div class="form-buttons">

@@ -21,3 +21,15 @@
 
 vn:
   hello: "Xin chao the gioi"
+  morefromportfolio: "Nhiều hơn từ thực hiện của tôi"
+  contactmenuitem: "Liên hệ"
+  contacttext:
+      title: "Liên lạc với tôi!"
+      paragraph: "Gửi tin nhắn của bạn bằng cách điền vào mẫu"
+  contactform:
+      labels:
+          name: "Họ và tên"
+          email: "Địa chỉ e-mail"
+          message: "Nội dung liên hệ"
+      submit:
+          send: "Gửi liên hệ"

@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  hello: "Bonjour le monde"
+    hello: "Bonjour le monde"
+    morefromportfolio: "Plus de mon portfolio"
+    contactmenuitem: "Contact"
+    contacttext:
+        title: "Contactez moi!"
+        paragraph: "Envoyez votre message en completant le formulaire"
+    contactform:
+        labels:
+            name: "Nom"
+            email: "E-mail"
+            message: "Message"
+        submit:
+            send: "Envoyer"

@@ -8,10 +8,41 @@ ThuyCreative4::Application.routes.draw do
   #match "contact", to: "contact#contact", as: "contact"
   #match "dispatch_email", to: "contact#dispatch_email",
    # as: "dispatch_email", method: :post
-  
+   
   resources :buckets
-
-  root 'public#index'
+  
+  resources :page_types do
+    
+    member do
+      get 'delete' # adding more RESTFUL action delete_page_type_path(:id)
+    end
+    
+  	resources :pages do
+  	  member do
+        get 'delete' # adding more RESTFUL action delete_page_type_page_path(:id,:ptid)
+      end
+  	end
+  	
+  end
+  
+  resources :section_types do
+    
+    member do
+      get 'delete' # adding more RESTFUL action delete_section_type_path(:id)
+    end
+    
+  	resources :sections do
+  	  member do
+        get 'delete' # adding more RESTFUL action delete_section_type_section_path(:id,:ptid)
+      end
+  	end
+  	
+  end
+  
+  # redirect root to the portfolio page
+  root :controller => :public, :action => :show, :permalink => 'portfolio'
+  #root 'public#index'
+  #root 'public#show'
   get 'show/:permalink', :to => 'public#show'
   
   get 'admin', :to => 'access#index'

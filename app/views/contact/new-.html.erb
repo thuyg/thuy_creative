@@ -1,11 +1,8 @@
 <section role="main" id="content">
 	<div class="main-content-style">
 
-<h1><%= t('contacttext.title') %></h1>
-
-<div class="contact-form-wrapper">
-	
-<p><%= t('contacttext.paragraph') %></p>
+<h1>Get in touch!</h1>
+<p>Send us your message through the following form</p>
 
 <!-- This custom helper is defined in app/helpers/application_helper.rb -->
 <%= error_messages_for(@contact) %>
@@ -15,25 +12,22 @@
 	
 		<div class="float-left column-1">
 			
-			<p><%= f.label(:name, t('contactform.labels.name')) %><br />
+			<p><%= f.label(:name) %><br />
 		    <%= f.text_field(:name) %></p>
 		
-			<p><%= f.label(:email, t('contactform.labels.email')) %><br />
+			<p><%= f.label(:email) %><br />
 		    <%= f.text_field(:email) %></p>
 			
 		</div><!-- /float-left -->
 		
 		<div class="float-left">
-			<p><%= f.label(:message, t('contactform.labels.message')) %><br />
+			<p><%= f.label(:message) %><br />
 		    <%= f.text_area(:message_body, rows: 7) %></p>
 
-			<%= f.submit t('contactform.submit.send') %>
+			<%= f.submit "Send" %>
 		</div><!-- /float-left -->
   
 	<% end %>
 </div><!-- /contact-form-block -->
-
-</div><!-- /contact-form-wrapper -->
-
 </div><!-- /main-content-style -->	
 </section>

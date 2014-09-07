@@ -5,7 +5,9 @@
     <title>Thuy Creative | <%= @page_title || 'Admin Area' %></title>
     <meta name="author" content="Thuy Giang">
 	
-	<%= stylesheet_link_tag('application', :media => 'all') %>
+	<%= stylesheet_link_tag('public', :media => 'all') %>
+	<%= stylesheet_link_tag('admin', :media => 'all') %>
+	
 	<%= javascript_include_tag("application") %>
 	
 	<%= csrf_meta_tags %>
@@ -17,6 +19,17 @@
 		<div class="header-style">
       		<h1><a href="#" title="Thuy Creative">Thuy Creative Admin</a></h1>
 			<h2 class="tag-line">We love web design and development</h2>
+			
+			<p class="languages languages-admin">
+			<% I18n.available_locales.each do |locale| %>
+			    <% if I18n.locale == locale.to_sym %>
+			      <b><%= link_to locale.to_s.upcase, url_for(:action => :index, :locale => locale) %></b>
+			    <% else %>
+			      <%= link_to locale.to_s.upcase, url_for(:action => :index, :locale => locale) %>
+			    <% end %>
+			  <% end %>
+			</p>
+			
 		</div><!-- /header-style -->
     </header>
 

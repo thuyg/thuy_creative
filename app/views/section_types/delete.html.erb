@@ -1,12 +1,13 @@
 <% @page_title = "Delete Section Type: #{@section_type.name_tag}" %>
 
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<%= link_to("<< Back to List", section_types_path, :class => 'back-link') %>
 
 
 <div class="section-types delete">
   <h2>Delete Section Type</h2>
   
-	<%= form_for(:section_type, :url => {:action => 'destroy', :id => @section_type.id}) do |f| %>
+	<%= form_for(:section_type, :url => section_type_path(:id => @section_type.id), :html => {:method => :delete}) do |f| %>
+	
     <p>Are you sure you want to permanently delete this section type?</p>
   
     <p class="reference-name"><%= @section_type.name_tag %></p>

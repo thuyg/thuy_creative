@@ -1,11 +1,11 @@
 <% @page_title = "Create Section" %>
 
-<%= link_to '<< Back to List', {:action => 'index', :section_type_id => @section_type.id} %>
+<%= link_to '<< Back to List', section_type_sections_path(:section_type_id => @section_type.id) %>
 
 <div class="sections new">
   <h2>Create Section</h2>
 
-  <%= form_for(:section, :url => {:action => 'create', :section_type_id => @section_type.id}) do |f| %>
+	<%= form_for(:section, :url => section_type_sections_path(:section_type_id => @section_type.id), :html => {:method => :post}) do |f| %>
   
 	<%= render(:partial => "form", :locals => {:f => f}) %>
     

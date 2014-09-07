@@ -1,11 +1,11 @@
 <% @page_title = "Edit Page: #{@page.name}" %>
 
-<%= link_to '<< Back to List', {:action => 'index', :page_type_id => @page_type.id} %>
+<%= link_to '<< Back to List', page_type_pages_path(:page_type_id => @page_type.id) %>
 
 <div class="pages edit">
   <h2>Update Page</h2>
 
-  <%= form_for(:page, :url => {:action => 'update', :id => @page.id, :page_type_id => @page_type.id}) do |f| %>
+<%= form_for(:page, :url => page_type_page_path(:id => @page.id, :page_type_id => @page_type.id), :html => {:method => :patch}) do |f| %>
   
     <%= render(:partial => "form", :locals => {:f => f}) %>
     

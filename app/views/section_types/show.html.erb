@@ -1,7 +1,7 @@
 <% @page_title = "Show Section Type: #{@section_type.name_tag}" %>
 
-<%= link_to 'Edit', {:action => 'edit', :id => @section_type.id} %> |
-<%= link_to 'Back to List', {:action => 'index'}, :class => 'back-link' %>
+<%= link_to 'Edit', edit_section_type_path(:id => @section_type.id) %> |
+<%= link_to 'Back to List', section_types_path, :class => 'back-link' %>
 
 <div class="section_types show">
   <h2>Show Section Type</h2>

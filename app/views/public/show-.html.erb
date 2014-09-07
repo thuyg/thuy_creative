@@ -5,10 +5,6 @@
 		
 		<h1><%= raw(@page.name) %></h1>
 
-		<% if (@page.name_tag == 'service') %>
-			<div class="service">
-		<% end %><!-- /end of if page is service -->
-
 		<% @sections.each do |section| %>
 			<% if (section.name_tag != 'tag-line') and (section.name_tag != 'copyright') and (section.name_tag != 'about-us') %>
   		
@@ -21,38 +17,10 @@
 						<p><%= link_to(section.content,section.content,{ :title => ""}) %></p>
 							
 					<% when 'project-gallery' %>
-					
-						<% if (@page.name_tag != 'portfolio') %>
-								</div><!-- /main-content-style -->	
-							</section>
-							<aside class="more-project" role="complementary">
-								<div class="more-project-style">
-									<h1><%= t('morefromportfolio') %></h1>
-									<ul class="thumbnail clearfix">
-									<% counter = 1 %>
-									<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
-										<% if (@page.id != page.id) %>
-											<% if (counter <= 3) %>
-											<li>
-												<a href="/show/<%= page.permalink %>/?locale=<%= I18n.locale %>" title="<%= page.project_review_title %>"  class="project-preview">
-													<%= image_tag(page.project_review_img, :size => '312x173') %>
-													<span class="preview-project-heading"><%= page.project_review_title %></span>
-													<span class="preview-project-short-description"><%= raw(page.project_review_short_description) %></span>
-												</a>
-											</li>
-											<% end %>
-											<% counter = counter + 1 %>
-										<% end %>
-									<% end %>
-									</ul>
-								</div><!-- /more-project-style -->
-							</aside>	
-						<% end %><!-- /end of if page is not portfolio -->
-						
+										
 						<% if (@page.name_tag == 'portfolio') %>
 							<ul class="thumbnail clearfix">
-								<%  # look for pages that are of "project" type
-									Page.page_by_page_type_id(PageType.project.first.id).sorted.each do |page| %>
+								<% Page.page_by_page_type_id(PageType.project.first.id).each do |page| %>
 									<li class="project-<%= page.name_tag %>">
 										<a href="show/<%= page.permalink %>/?locale=<%= I18n.locale %>" title="<%= page.project_review_title %>"  class="project-preview">
 											<%= image_tag(page.project_review_img, :size => '312x173') %>
@@ -68,12 +36,7 @@
   		
 			<% end %><!-- end if of not section of tag-line, etc. -->
 		<% end %><!-- end case of sections--> 
-
-		<% if (@page.name_tag == 'service') %>
-			</div>
-		<% end %><!-- /end of if page is service -->
 		
-<% if (@page.page_type_id != PageType.project.first.id) %> 
+
 		</div><!-- /main-content-style -->	
 	</section>
-<% end %>
