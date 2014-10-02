@@ -2,11 +2,7 @@
 
 <section role="main" id="content">
 	<div class="main-content-style">
-		<% if (@page.page_type_id == PageType.project.first.id) %>
-			<h1 class="hidden-c"><%= raw(@page.name) %></h1>
-		<% else %>
-			<h1><%= raw(@page.name) %></h1>
-		<% end %>
+		<h1><%= raw(@page.name) %></h1>
 
 		<% if (@page.name_tag == 'service') %>
 			<div class="service">

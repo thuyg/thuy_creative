@@ -24,7 +24,7 @@ en:
     contactmenuitem: "Contact"
     contacttext:
         title: "Get in touch!"
-        paragraph: "Send us your message through the following form"
+        paragraph: "Send me your message through the following form"
     contactform:
         labels:
             name: "Name"

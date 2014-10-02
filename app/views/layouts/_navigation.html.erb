@@ -1,5 +1,5 @@
 <% pages ||= [] %>
-<ul>
+<ul id="nav-points">
 <% pages.each do |page| %>
 	<% if (page.page_type_id != PageType.project.first.id) %> 
 		<li class="<%= page.permalink.to_s + '-topmenu-item' %>"><%= link_to_unless_current(raw(page.name), {:controller => 'public', :action => 'show', :permalink => page.permalink}) %></li>

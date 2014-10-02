@@ -33,6 +33,7 @@ class Page < ActiveRecord::Base
   scope :sorted, lambda { order("pages.position ASC") }
   scope :newest_first, lambda { order("pages.created_at DESC")}
   
+  # the page that its foreign key value of page_type_id is page_types.id 
   scope :page_by_page_type_id, lambda { |ptype_id| where(:page_type_id => ptype_id) } 
   
   private

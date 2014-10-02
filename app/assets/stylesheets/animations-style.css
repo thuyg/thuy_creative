@@ -40,8 +40,36 @@
 	animation: fadeinslidedown 0.6s ease-in-out 1.5s normal forwards 1;
 }
 
+#nav-points a:before {
+    content: "<";
+    margin-right: 5px;
+    transform: translateX(10px);
+}
+#nav-points a:after,
+#nav-points a:before {
+    display: inline-block;
+    opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s ease 0s, opacity 0.2s ease 0s;
+    transition: transform 0.3s ease 0s, opacity 0.2s ease 0s;
+}
+#nav-points a:focus:after, 
+#nav-points a:focus:before, 
+#nav-points a:hover:after, 
+#nav-points a:hover:before {
+    color: #000;
+    opacity: 1;
+	-webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+#nav-points a:after {
+    content: ">";
+    margin-left: 5px;
+	-webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+}
+
 /* content */
-#content {
+/*#content {
 	opacity: 0;
 	
 	-webkit-animation: fadein 0.6s ease-in-out 2.1s normal forwards 1;
@@ -49,10 +77,10 @@
 	-o-animation: fadein 0.6s ease-in-out 2.1s normal forwards 1;
 	-ms-animation: fadein 0.6s ease-in-out 2.1s normal forwards 1;
 	animation: fadein 0.6s ease-in-out 2.1s normal forwards 1;
-}
+}*/
 
 /* footer */
-#page-footer {
+/*#page-footer {
 	opacity: 0;
 	
 	-webkit-animation: fadeinslideup 0.6s ease-in-out 2.4s 1 normal forwards;
@@ -60,7 +88,7 @@
 	-o-animation: fadeinslideup 0.6s ease-in-out 2.4s 1 normal forwards;
 	-ms-animation: fadeinslideup 0.6s ease-in-out 2.4s 1 normal forwards;
 	animation: fadeinslideup 0.6s ease-in-out 2.4s 1 normal forwards;
-}
+}*/
 
 /* fade in and slide down animation definition */
 /* Android, iOS, Chorme, Safari */
@@ -146,3 +174,225 @@
 	0% { opacity: 0; }
 	100% { opacity: 1; }	
 }
+
+/* project of thuy-creative */
+.thumbnail li {
+	overflow: hidden; 
+}
+.project-preview img {
+	-webkit-transition: -webkit-transform 1s ease 0s;
+	transition: transform 1s ease 0s;
+}
+.project-preview:hover img {
+	-webkit-transform: scale(1.2) rotate(3deg);
+	transform: scale(1.2) rotate(3deg);
+}
+
+
+/* individual project - preview */
+.sprite-amk-2013 {
+	-webkit-animation: desktop-slide 2s ease 2s 1;
+	animation: desktop-slide 2s ease 2s 1;
+}
+.sprite-phone-amk-2013 {
+	-webkit-animation: phone-slide 2s ease 4s 1;
+	animation: phone-slide 2s ease 4s 1;
+}
+
+/* amk 2012 */
+.sprite-amk-2012 {
+	-webkit-animation: desktop-slide-amk-2012 2s ease 2s 1;
+	animation: desktop-slide-amk-2012 2s ease 2s 1;
+}
+
+/* answerlink */
+.sprite-ans {
+	-webkit-animation: desktop-slide-ans 2s ease 2s 1;
+	animation: desktop-slide-ans 2s ease 2s 1;
+}
+
+/* orangefl*/
+.sprite-orangefl{
+	-webkit-animation: desktop-slide-orangefl 2s ease 2s 1;
+	animation: desktop-slide-orangefl 2s ease 2s 1;
+}
+
+/*mobile styles*/
+@media only screen and (max-width:599px) {
+	
+	/* portfolio - project review */
+		.project-preview:hover img {
+			-webkit-transform: none;
+			transform: none;
+		}
+	
+	/* aeromark 2013 */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		448- 138 = 310
+		50- 41 = 9
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -310px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -310px; }
+		100% {background-position: 0 0; } 
+	}
+
+	/* phone slide */
+	@-webkit-keyframes phone-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -9px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes phone-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -9px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /aeromark 2013 */
+	
+	/* aeromark 2012 */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		288 - 138 = 150
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-amk-2012 {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -150px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-amk-2012 {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -150px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /aeromark 2012 */
+	
+	/* answerlink */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		337 - 138 = 199
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-ans {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -199px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-ans {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -199px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /answerlink */
+	
+	/* orangefl */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		240 - 138 = 102
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-orangefl {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -102px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-orangefl {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -102px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /orangefl */
+	
+	
+}/* /mobile styles */
+
+/* tablet and desktop styles */
+@media only screen and (min-width:600px) {
+	
+	/* aeromark 2013 */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		767 - 233 = 534
+		405 - 77 = 328
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -534px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -534px; }
+		100% {background-position: 0 0; } 
+	}
+
+	/* phone slide */
+	@-webkit-keyframes phone-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -328px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes phone-slide {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -328px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /aeromark 2013 */
+	
+	/* aeromark 2012 */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		494 - 233 = 261
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-amk-2012 {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -261px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-amk-2012 {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -261px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /aeromark 2012 */
+	
+	/* answerlink */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		578 - 233 = 345
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-ans {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -345px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-ans {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -345px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /answerlink */
+	
+	/* orangefl */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		411- 233 = 178
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-orangefl {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -178px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-orangefl {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -178px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /orangefl */
+	
+}/* /tablet and desktop styles */
+

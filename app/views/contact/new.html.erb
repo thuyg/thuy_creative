@@ -26,6 +26,10 @@
 		<div class="float-left">
 			<p><%= f.label(:message, t('contactform.labels.message')) %><br />
 		    <%= f.text_area(:message_body, rows: 7) %></p>
+			
+			<!-- <p class="antispam">
+				Leave this empty: <input type="text" value="" name="blank_txt">
+			</p> -->
 
 			<%= f.submit t('contactform.submit.send') %>
 		</div><!-- /float-left -->
