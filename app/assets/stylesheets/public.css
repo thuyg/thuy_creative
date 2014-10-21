@@ -166,6 +166,9 @@ a:hover {
 }
 
 /* header */
+#page-header {
+	margin-top: 12px;
+}
 header h1 a {
 	display: block;
 	width: 100%;
@@ -285,7 +288,8 @@ img.align-center,
 	text-transform: capitalize;
 	color: #666666;
 }
-.project-type {
+.project-type,
+#content .project-detail h2 {
 	color: #999999;	
 }
 
@@ -308,6 +312,11 @@ img.align-center,
 }
 .role-list li {
 	padding-top: 6px;
+}
+
+/* thuy creative */
+#content .project-detail h2 {
+	margin-bottom: 12px;
 }
 
 /* preview */
@@ -348,6 +357,12 @@ img.align-center,
 .sprite-orangefl {
 	background:transparent url('orangefl-home413x411.jpg') 0 0 no-repeat;
 }
+.sprite-flowrite {
+	background:transparent url('flowrite-homepage413x529.jpg') 0 0 no-repeat;
+}
+.sprite-thuy-creative {
+	background:transparent url('thuy-creative-home413x468.jpg') 0 0 no-repeat;
+}
 
 .sprite-phone {
 	width:50px;
@@ -360,6 +375,12 @@ img.align-center,
 }
 .sprite-phone-amk-2013 {
 	background:transparent url('home-amk-new-50.jpg') 0 0 no-repeat;
+}
+.sprite-phone-flowrite {
+	background:transparent url('flowrite-homepage50x290.jpg') 0 0 no-repeat;
+}
+.sprite-phone-thuy-creative {
+	background:transparent url('thuy-creative-home50x304.jpg') 0 0 no-repeat;
 }
 
 /* More project */
@@ -423,6 +444,41 @@ input[type="email"],
 textarea {
 	width: 100%;
 }
+
+/* error */
+/*#errorExplanation {
+    background-color: #ffffff;
+    border: 1px solid #aa0000;
+    margin: 0 auto 1.5em;
+    padding: 0;
+    width: 400px;
+}
+
+#errorExplanation h2 {
+    background-color: #aa0000;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 5px 5px 15px;
+    width: 380px;
+}
+
+#errorExplanation p {
+    color: #333333;
+    margin: 0;
+    padding: 10px 0.5em;
+}
+
+#errorExplanation ul {
+    margin-bottom: 10px;
+    margin-left: 35px;
+    margin-top: 0;
+}
+
+#errorExplanation ul li {
+    list-style: square outside none;
+}*/
 
 /* footer */
 .footer-style {
@@ -516,7 +572,8 @@ textarea {
 	
 	#content h1,
 	.project-resume h2,
-	.about-us h1 {
+	.about-us h1,
+	#content .project-detail h2 {
 		font-size: 18px;
 	}
 	
@@ -596,6 +653,18 @@ textarea {
 	.sprite-orangefl {
 		background:transparent url('orangefl-home241x240.jpg') 0 0 no-repeat;
 	}
+	.sprite-flowrite {
+		background:transparent url('flowrite-homepage241x309.jpg') 0 0 no-repeat;
+	}
+	.sprite-phone-flowrite {
+		background:transparent url('flowrite-homepage27x157.jpg') 0 0 no-repeat;
+	}
+	.sprite-thuy-creative {
+		background:transparent url('thuy-creative-home241x273.jpg') 0 0 no-repeat;
+	}
+	.sprite-phone-thuy-creative {
+		background:transparent url('thuy-creative-home27x164.jpg') 0 0 no-repeat;
+	}
 	
 	.float-left {
 		float: none;
@@ -637,10 +706,11 @@ textarea {
 	
 	#content h1,
 	.project-resume h2,
-	.about-us h1 {
+	.about-us h1,
+	#content .project-detail h2  {
 		font-size: 18px;
 	}
-	
+
 	/* portfolio */
 	.preview-project-heading {
 		font-size: 16px;
@@ -743,8 +813,13 @@ textarea {
 	#content h1,
 	.project-resume h2,
 	.about-us h1 {
-		font-size: 24.5px;
 		font-weight: bold;
+	}
+	#content h1,
+	.project-resume h2,
+	.about-us h1,
+	#content .project-detail h2 {
+		font-size: 24.5px;
 	}
 	
 	/* navigation -top */
@@ -819,15 +894,8 @@ textarea {
 	}
 	
 	/* footer */
-	.copyright {
-		/*width: 30%;*/
-	}
 	.copyright p {
 		padding-bottom: 6px;
-	}
-	.about-us {
-		/*width: 64.4%;
-		float: right;*/
 	}
 	.about-us h1,
 	.copyright {
@@ -885,6 +953,9 @@ textarea {
 	#content .project-resume h1 {
 		font-size: 36px;
 		line-height: 1;
+	}
+	#content .project-detail h2 {
+		font-size: 24.5px;
 	}
 	.project-type {
 		font-size: 26px;

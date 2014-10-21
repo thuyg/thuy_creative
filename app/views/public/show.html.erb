@@ -17,7 +17,7 @@
   		
     			<% case SectionType.section_type_name_tag(section.section_type_id).first.name_tag %>
     				<% when 'html' %>
-      					<%= raw(sanitize(section.content, :tags => ['h1', 'h2', 'h3', 'p', 'span', 'strong', 'em', 'a', 'img', 'abbr', 'b', 'div', 'section'])) %>
+      					<%= raw(sanitize(section.content, :tags => ['h1', 'h2', 'h3', 'p', 'span', 'strong', 'em', 'a', 'img', 'abbr', 'b', 'div', 'section'], :attributes => ['class','id','href','target','title', 'height', 'width', 'src', 'alt'])) %>
     				<% when 'text' %>
       					<p><%= strip_tags(section.content) %></p>
 					<% when 'link' %>

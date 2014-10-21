@@ -52,6 +52,7 @@
 	-webkit-transition: -webkit-transform 0.3s ease 0s, opacity 0.2s ease 0s;
     transition: transform 0.3s ease 0s, opacity 0.2s ease 0s;
 }
+/* navigation */
 #nav-points a:focus:after, 
 #nav-points a:focus:before, 
 #nav-points a:hover:after, 
@@ -175,7 +176,7 @@
 	100% { opacity: 1; }	
 }
 
-/* project of thuy-creative */
+/* projects of thuy-creative */
 .thumbnail li {
 	overflow: hidden; 
 }
@@ -217,13 +218,49 @@
 	animation: desktop-slide-orangefl 2s ease 2s 1;
 }
 
+/* flowrite */
+.sprite-flowrite {
+	-webkit-animation: desktop-slide-flowrite 2s ease 2s 1;
+	animation: desktop-slide-flowrite 2s ease 2s 1;
+}
+.sprite-phone-flowrite {
+	-webkit-animation: phone-slide-flowrite 2s ease 4s 1;
+	animation: phone-slide-flowrite 2s ease 4s 1;
+}
+
+/* thuy creative */
+.sprite-thuy-creative {
+	-webkit-animation: desktop-slide-thuy-creative 2s ease 2s 1;
+	animation: desktop-slide-thuy-creative 2s ease 2s 1;
+}
+.sprite-phone-thuy-creative {
+	-webkit-animation: phone-slide-thuy-creative 2s ease 4s 1;
+	animation: phone-slide-thuy-creative 2s ease 4s 1;
+}
+
 /*mobile styles*/
 @media only screen and (max-width:599px) {
+	
+	#nav-points a:before,
+	#nav-points a:after {
+	    content: "";
+	}
+	#nav-points a:before {
+	    margin-right: 0;
+	}
+	#nav-points a:after {
+	    margin-left: 0;
+	}
 	
 	/* portfolio - project review */
 		.project-preview:hover img {
 			-webkit-transform: none;
 			transform: none;
+		}
+		
+		/* projects of thuy-creative */
+		.thumbnail li {
+			overflow: visible; 
 		}
 	
 	/* aeromark 2013 */
@@ -307,12 +344,68 @@
 	}
 	/* /orangefl */
 	
+	/* Flowrite */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		309 - 138 = 171
+		157 - 41 = 116
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -171px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -171px; }
+		100% {background-position: 0 0; } 
+	}
+	@-webkit-keyframes phone-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -116px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes phone-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -116px; }
+		100% {background-position: 0 0; } 
+	}
+	
+	/* thuy creative */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		273 - 138 = 135
+		164- 41 = 123
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -135px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -135px; }
+		100% {background-position: 0 0; } 
+	}
+
+	/* phone slide */
+	@-webkit-keyframes phone-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -123px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes phone-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -123px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /thuy creative */
 	
 }/* /mobile styles */
 
 /* tablet and desktop styles */
 @media only screen and (min-width:600px) {
-	
+		
 	/* aeromark 2013 */
 	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
 		767 - 233 = 534
@@ -393,6 +486,63 @@
 		100% {background-position: 0 0; } 
 	}
 	/* /orangefl */
+	
+	/* Flowrite */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		529 - 233 = 296
+		290 - 77 = 213
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -296px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -296px; }
+		100% {background-position: 0 0; } 
+	}
+	@-webkit-keyframes phone-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -213px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes phone-slide-flowrite {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -213px; }
+		100% {background-position: 0 0; } 
+	}
+	
+	/* thuy creative */
+	/* Height of the background image - height of the screen =  the position to reach to see the bottom of the background image within the visible area
+		468 - 233 = 235
+		304 - 77 = 227
+	*/
+	/* desktop slide */
+	@-webkit-keyframes desktop-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -235px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes desktop-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -235px; }
+		100% {background-position: 0 0; } 
+	}
+
+	/* phone slide */
+	@-webkit-keyframes phone-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -227px; }
+		100% {background-position: 0 0; } 
+	}
+	@keyframes phone-slide-thuy-creative {
+		0% {background-position: 0 0; } 
+		50% {background-position: 0 -227px; }
+		100% {background-position: 0 0; } 
+	}
+	/* /thuy creative */
 	
 }/* /tablet and desktop styles */
 
